@@ -1,0 +1,26 @@
+function users () {
+  this.name= '';
+  this.Life= 100;
+  this.giveLife= function giveLife(targetPlayer) {
+    targetPlayer.Life+= 1;
+    console.log(this.name + ' gave a life to ' + targetPlayer.name);
+    console.log(this.name + ' life: ', this.Life);
+    console.log(targetPlayer.name + ' life:' + targetPlayer.Life);
+  };
+}
+
+var usama = new users();
+var Hamna = new users();
+
+usama.name = 'usama';
+Hamna.name= 'hamna';
+
+users.prototype.uppercut = function (targetPlayer) {
+  targetPlayer.Life -= 3;
+  console.log(this.name + ' Just uppercutted ' + targetPlayer.name );
+  console.log(this.name + ' Life: ' + this.Life);
+  console.log(targetPlayer.name + ' Life ' + targetPlayer.Life);
+}
+
+usama.giveLife(Hamna);
+Hamna.uppercut(usama);
