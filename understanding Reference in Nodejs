@@ -1,0 +1,10 @@
+var usama ={
+  favfood: 'pasta',
+  age:21
+}
+
+var burhan = usama; // it will not make a copy of usama instead it will assign the reference of usama
+
+burhan.favfood  = 'Pizza';
+
+console.log(usama.favfood); // Pizza
