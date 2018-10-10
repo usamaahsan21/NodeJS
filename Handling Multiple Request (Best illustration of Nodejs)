@@ -1,0 +1,31 @@
+
+
+function placeorder(ordernum) {
+  console.log('order placed', ordernum);
+
+  DeliverFood(function() {
+    console.log('Food Delivered To Ordernum', ordernum);
+  });
+}
+function placeCookieOrder(ordernum) {
+  console.log('CookieOrderorder placed', ordernum);
+
+  DeliverCookie(function() {
+    console.log('Cookie Delivered To Ordernum', ordernum);
+  });
+}
+
+function DeliverFood(callback){
+  setTimeout(callback,2000);
+};
+function DeliverCookie(callback){
+  setTimeout(callback,3000);
+};
+
+// simulate orders
+
+placeorder(1);
+placeCookieOrder(5);
+placeorder(2);
+placeorder(3);
+placeorder(4);
