@@ -1,0 +1,18 @@
+Consider object factories as an object which creates another object.
+
+simply:
+
+module.exports = function () {
+return {
+favmov: '';
+}
+}
+
+
+and then use it in any other module it will not retain the changes done by any of the module bcz it is returning a new object everytime.
+otherwise if we do this: 
+module.exports = {
+favmovie: ''
+}
+this will copy the reference only.
+for better understanding watch tutorial no 10 and 11 of new boston node js series.
