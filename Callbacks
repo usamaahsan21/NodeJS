@@ -1,0 +1,26 @@
+const posts = [
+    {title: 'Post one', body : "This is post one"},
+    {title: 'Post two', body : "This is post two"}
+];
+
+function getposts(){
+
+ setTimeout(() => {
+    posts.forEach((posts)=>{
+        console.log(posts.title);
+    }); 
+ }, 1000);
+    
+}
+
+function CreatPost(post,callback) {
+setTimeout(() => {
+    posts.push(post);
+    callback();
+}, 2000);
+    
+}
+
+CreatPost({title: "post 3", body:"this is post 3"}, getposts)
+//getposts();
+//console.log("script is running");
